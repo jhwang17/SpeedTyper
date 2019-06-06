@@ -9,3 +9,6 @@ This app was not made to generate currency or as a source of revenue. The primar
 and also a reflection of the developer's abilities.
 
 This version was built using activities, not fragments. Another version using fragments will be posted in a future date.
+
+
+More information about this application will be updated eventually...
