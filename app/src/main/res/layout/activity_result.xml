@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity">
+
+    // RESULTS
+    <RelativeLayout
+        android:id="@+id/layoutResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        // HEADER
+
+        <TextView
+            android:id="@+id/headerResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Results"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        // TOTAL SCORE
+
+        <TextView
+            android:id="@+id/lblScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headerResults"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="20dp"
+            android:text="Final Score: "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/lblScore"
+            android:layout_alignBottom="@id/lblScore"
+            android:layout_marginLeft="10dp"
+            android:text="0"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/lblWPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblScore"
+            android:layout_alignEnd="@id/lblScore"
+            android:layout_marginTop="20dp"
+            android:text="Speed: "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textWPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/lblWPS"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/lblWPS"
+            android:text="0 wps"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutResults"
+        android:layout_marginTop="35dp">
+
+        <TextView
+            android:id="@+id/textComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Comment"
+            android:textSize="26dp" />
+    </RelativeLayout>
+
+    // SCORE SUBMISSION
+    <RelativeLayout
+        android:id="@+id/layoutNewTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutComment"
+        android:layout_marginTop="15dp"
+        android:visibility="invisible" >
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter your initials"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="6"
+            android:inputType="textCapCharacters"
+            android:maxLength="5"
+            android:textAlignment="center"
+            android:textAllCaps="true" />
+    </RelativeLayout>
+
+    // TOOLBAR
+    <RelativeLayout
+        android:id="@+id/bottomToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp" >
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:background="@drawable/btn_default_01" />
+
+        <Button
+            android:id="@+id/btnTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btnHome"
+            android:layout_marginLeft="20dp"
+            android:text="Try Again"
+            android:background="@drawable/btn_default_01" />
+
+        <Button
+            android:id="@+id/btnRanking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btnTryAgain"
+            android:layout_marginLeft="20dp"
+            android:text="Rankings"
+            android:background="@drawable/btn_default_01" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+<!--
+<RelativeLayout
+android:id="@+id/layoutNewTop"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/layoutComment"
+android:layout_marginTop="15dp"
+android:visibility="invisible" >
+
+<TextView
+    android:id="@+id/tvGoodJob"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="You broke one of the top 10 record!"
+    android:textAlignment="center"
+    android:textColor="@color/colorBlack"
+    android:textSize="26dp"
+    android:textStyle="bold" />
+
+<TextView
+    android:id="@+id/tvName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tvGoodJob"
+    android:layout_marginTop="10dp"
+    android:text="Enter your initials"
+    android:textAlignment="center"
+    android:textSize="18dp"
+    android:textStyle="bold" />
+
+<EditText
+    android:id="@+id/etName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tvName"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"
+    android:ems="6"
+    android:inputType="textCapCharacters"
+    android:maxLength="5"
+    android:textAlignment="center"
+    android:textAllCaps="true" />
+</RelativeLayout>-->

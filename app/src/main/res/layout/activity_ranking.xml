@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RankingActivity" >
+
+    // TOOLBAR
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp" >
+
+        <Button
+            android:id="@+id/btnRankingBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTransparent"
+            android:text="Back" />
+
+        <TextView
+            android:id="@+id/textRanking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Top Scores"
+            android:textSize="30dp"
+            android:textColor="@color/colorBlack" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutRankingCols"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/toolbar"
+        android:background="@drawable/text_view_border">
+
+        <TextView
+            android:id="@+id/lblRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/lblPlayer"
+            android:layout_marginRight="50dp"
+            android:layout_toLeftOf="@id/lblPlayer"
+            android:text="Rank"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/colorBlack"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/lblPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Player"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/colorBlack"
+            android:textSize="26dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/lblPlayer"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@id/lblPlayer"
+            android:text="Score"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/colorBlack"
+            android:textSize="22dp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lvResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutRankingCols"
+        android:listSelector="@color/colorTransparent" >
+
+    </ListView>
+</RelativeLayout>
