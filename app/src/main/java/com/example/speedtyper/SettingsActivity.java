@@ -1,5 +1,6 @@
 package com.example.speedtyper;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -7,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,6 +18,8 @@ public class SettingsActivity extends AppCompatActivity {
 
     Button backBtn;
     Button clearDataBtn;
+    RadioGroup rgDifficulty;
+    RadioButton rbEasy, rbMedium, rbHard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +27,16 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         backBtn = findViewById(R.id.btnSettingsBack);
+        rgDifficulty = findViewById(R.id.rgDifficulty);
+        rbEasy = findViewById(R.id.rbEasy);
+        rbMedium = findViewById(R.id.rbMed);
+        rbHard = findViewById(R.id.rbHard);
         clearDataBtn = findViewById(R.id.btnClearData);
 
         initBackBtn();
         initClearDataBtn();
+        initSettings();
+        initDifficulty();
     }
 
     private void initBackBtn() {
@@ -63,6 +74,43 @@ public class SettingsActivity extends AppCompatActivity {
                 .setNeutralButton("Cancel", null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+    }
+
+    private void initSettings() {
+        String difficultyLevel = getSharedPreferences("SpeedTyperPreferences",
+                Context.MODE_PRIVATE).getString("difficultylevel", "easy");
+
+        if(difficultyLevel.equalsIgnoreCase("easy")) {
+            rbEasy.setChecked(true);
+        } else if(difficultyLevel.equalsIgnoreCase("medium")) {
+            rbMedium.setChecked(true);
+        } else {
+            rbHard.setChecked(true);
+        }
+    }
+
+    private void initDifficulty() {
+        rgDifficulty.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(rbEasy.isChecked()) {
+                    getSharedPreferences("SpeedTyperPreferences", Context.MODE_PRIVATE)
+                            .edit()
+                            .putString("difficultylevel", "easy")
+                            .commit();
+                } else if(rbMedium.isChecked()) {
+                    getSharedPreferences("SpeedTyperPreferences", Context.MODE_PRIVATE)
+                            .edit()
+                            .putString("difficultylevel", "medium")
+                            .commit();
+                } else {
+                    getSharedPreferences("SpeedTyperPreferences", Context.MODE_PRIVATE)
+                            .edit()
+                            .putString("difficultylevel", "hard")
+                            .commit();
+                }
+            }
+        });
     }
 
     private void deleteSavedData() {

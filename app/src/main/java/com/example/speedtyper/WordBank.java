@@ -2,41 +2,33 @@ package com.example.speedtyper;
 
 public class WordBank {
 
-    private String[] fruitBank = new String[] {
-            "apple",
-            "grape",
-            "pear",
-            "pineapple",
-            "kiwi",
-            "strawberry"
-    };
-
-    private String[] animalBank = new String[] {
-            "dog",
-            "cat",
-            "bird",
-            "elephant"
-    };
-
-    private String[] randomBank = new String[] {
-            "table",
-            "wallet",
-            "sky",
-            "locker",
-            "train",
-            "galaxy",
+    private String[] easyBank = new String[] {
+            "apple", "grape", "pear", "kiwi", "dog", "cat", "bird", "table", "wallet", "sky", "locker",
+            "train", "galaxy",
             "space"
     };
 
-    public String[] getFruitBank() {
-        return fruitBank;
+    private String[] mediumBank = new String[] {
+            "elephant", "expunge", "pineapple", "strawberry", "imagine", "religion", "deceit", "bulbasaur",
+            "ivysaur", "caterpie", "pidgey", "poliwag", "vulpix", "diglett", "rattata"
+    };
+
+    private String[] hardBank = new String[] {
+            "abject", "abnegation", "anachronistic", "antediluvian", "camaraderie", "circumlocution",
+            "utilitarian", "vicissitude", "zephyr", "tirade", "paradigm", "ostensible", "obstreperous",
+            "ubiquitous", "multifarious", "grandiloquent", "intransigent", "legerdemain",
+            "mendacious"
+    };
+
+    public String[] getEasyBank() {
+        return easyBank;
     }
 
-    public String[] getAnimalBank() {
-        return animalBank;
+    public String[] getMediumBank() {
+        return mediumBank;
     }
 
-    public String[] getRandomBank() {
-        return randomBank;
+    public String[] getHardBank() {
+        return hardBank;
     }
 }

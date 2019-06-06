@@ -33,6 +33,7 @@ public class SpeedRunActivity extends AppCompatActivity {
     ImageButton ibSR;
 
     int score;
+    int difficulty;
     boolean inGame, inputMatched;
     boolean isInterrupted;
 
@@ -62,6 +63,22 @@ public class SpeedRunActivity extends AppCompatActivity {
         initHelpBtn();
         initBackBtn();
         initStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        String difficultyLevel = getSharedPreferences("SpeedTyperPreferences", Context.MODE_PRIVATE)
+                .getString("difficultylevel", "easy");
+
+        if(difficultyLevel.equalsIgnoreCase("easy")) {
+            difficulty = 0;
+        } else if(difficultyLevel.equalsIgnoreCase("medium")) {
+            difficulty = 1;
+        } else {
+            difficulty = 2;
+        }
     }
 
     @Override
@@ -168,8 +185,6 @@ public class SpeedRunActivity extends AppCompatActivity {
                 } else {
                     endGame();
                 }
-
-                //endGame();
             }
 
             public void endGame() {
@@ -243,7 +258,7 @@ public class SpeedRunActivity extends AppCompatActivity {
     }
 
     private void wordHandler() {
-        String[] bank = generateBank();
+        String[] bank = generateBank(difficulty);
         String s = generateWord(bank);
         setWord(s);
     }
@@ -252,15 +267,15 @@ public class SpeedRunActivity extends AppCompatActivity {
         txtWord.setText(s);
     }
 
-    private String[] generateBank() {
-        int ranNum = (int) ((Math.random() * 3));
+    private String[] generateBank(int lvl) {
+        //int ranNum = (int) ((Math.random() * 3));
 
-        if(ranNum == 0) {
-            return wordBank.getAnimalBank();
-        } else if(ranNum == 1) {
-            return wordBank.getFruitBank();
+        if(lvl == 0) {
+            return wordBank.getEasyBank();
+        } else if(lvl == 1) {
+            return wordBank.getMediumBank();
         } else {
-            return wordBank.getRandomBank();
+            return wordBank.getHardBank();
         }
     }
 
