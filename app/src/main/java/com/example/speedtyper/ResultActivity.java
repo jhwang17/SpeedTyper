@@ -29,8 +29,7 @@ public class ResultActivity extends AppCompatActivity {
     RelativeLayout layoutNewTop;
 
     int score;
-    private boolean isNewHighScore;
-    private boolean initialEntered;
+    boolean isNewHighScore, initialEntered;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +40,7 @@ public class ResultActivity extends AppCompatActivity {
         currentResult = new Result();
 
         score = scoreSingleton.getScore();
+        currentResult.setPlayerScore(scoreSingleton.getScore());
 
         txtScore = findViewById(R.id.textScore);
         txtWPS = findViewById(R.id.textWPS);
@@ -58,8 +58,6 @@ public class ResultActivity extends AppCompatActivity {
         initHomeBtn();
         initRankingBtn();
         initTryAgainBtn();
-
-        currentResult.setPlayerScore(scoreSingleton.getScore());
     }
 
     private void initHomeBtn() {
