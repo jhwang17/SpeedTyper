@@ -29,7 +29,7 @@ public class SpeedRunActivity extends AppCompatActivity {
     TextView lblWord, txtWord;
     TextView lblScore, txtScore;
     Button backBtn;
-    ImageButton ibHelp;
+    ImageButton ibHowToPlay;
     ImageButton ibSR;
 
     int score;
@@ -37,7 +37,7 @@ public class SpeedRunActivity extends AppCompatActivity {
     boolean inGame, inputMatched;
     boolean isInterrupted;
 
-    private long MINUTE = (long) 10000.0;
+    private long MINUTE = (long) 60000.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +54,13 @@ public class SpeedRunActivity extends AppCompatActivity {
         lblScore = findViewById(R.id.lblScore);
         txtScore = findViewById(R.id.textScore);
         backBtn = findViewById(R.id.btnBack);
-        ibHelp = findViewById(R.id.ibHelp);
+        ibHowToPlay = findViewById(R.id.ibHowToPlay);
         ibSR = findViewById(R.id.ibSR);
 
         inGame = false;
         isInterrupted = false;
 
-        initHelpBtn();
+        initHowToPlayBtn();
         initBackBtn();
         initStart();
     }
@@ -108,12 +108,14 @@ public class SpeedRunActivity extends AppCompatActivity {
         }
     }
 
-    private void initHelpBtn() {
+    private void initHowToPlayBtn() {
 
-        ibHelp.setOnClickListener(new View.OnClickListener() {
+        ibHowToPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(SpeedRunActivity.this, HowToPlayActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }
@@ -146,8 +148,8 @@ public class SpeedRunActivity extends AppCompatActivity {
                     ibSR.setVisibility(View.INVISIBLE);
                     backBtn.setEnabled(false);
                     backBtn.setVisibility(View.INVISIBLE);
-                    ibHelp.setEnabled(false);
-                    ibHelp.setVisibility(View.INVISIBLE);
+                    ibHowToPlay.setEnabled(false);
+                    ibHowToPlay.setVisibility(View.INVISIBLE);
 
                     etInput.setEnabled(true);
                     etInput.requestFocus();

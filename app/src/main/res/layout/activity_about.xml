@@ -33,7 +33,7 @@
     <ScrollView
         android:id="@+id/svInfo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="25dp"
         android:layout_below="@id/toolbar" >
 
@@ -42,21 +42,86 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textInfoOne"
+                android:id="@+id/lblInformation"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="15dp"
-                android:text="1. This application was developed primarly for John Hwang's github, but also as practice."/>
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Information"
+                android:textColor="@color/colorBlack"
+                android:textSize="30dp" />
 
             <TextView
-                android:id="@+id/textInfoTwo"
+                android:id="@+id/textPurpose"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_below="@id/textInfoOne"
-                android:layout_alignLeft="@id/textInfoOne"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblInformation"
+                android:layout_alignParentLeft="true"
                 android:layout_marginTop="15dp"
-                android:text="2. This application was designed with two primary functions:"/>
+                android:layout_marginLeft="15dp"
+                android:text="SpeedTyper was developed with the intention of fulfilling two purposes:"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textPurposeOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textPurpose"
+                android:layout_alignLeft="@id/textPurpose"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:text="1. Providing practice and a learning experience in mobile application development."/>
+
+            <TextView
+                android:id="@+id/textPurposeTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textPurposeOne"
+                android:layout_alignLeft="@id/textPurposeOne"
+                android:layout_marginTop="10dp"
+                android:text="2. Becoming a future sample for the developer's resume/github portfolio."/>
+
+            <TextView
+                android:id="@+id/textProfit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textPurposeTwo"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:text="SpeedTyper is an application entirely built for practice and will not be published. The application will not and was not built to gain, collect, or receive any form of currency."
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/lblCredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textProfit"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="Credits"
+                android:textColor="@color/colorBlack"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/lblDeveloper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblCredits"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="Application Developer"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDeveloper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblDeveloper"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="John C Hwang" />
 
         </RelativeLayout>
     </ScrollView>

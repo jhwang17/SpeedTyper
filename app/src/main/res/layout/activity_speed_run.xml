@@ -33,13 +33,12 @@
             android:background="@color/colorTransparent" />
 
         <ImageButton
-            android:id="@+id/ibHelp"
+            android:id="@+id/ibHowToPlay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
             android:layout_toRightOf="@id/textSRTitle"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="50dp"
-            android:src="@android:drawable/ic_btn_speak_now" />
+            android:src="@drawable/pkmn2_1" />
 
     </RelativeLayout>
 
