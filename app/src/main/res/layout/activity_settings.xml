@@ -4,31 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsActivity" >
 
-    // TOP TOOLBAR
+    // TOOLBAR
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp" >
-
-        <Button
-            android:id="@+id/btnSettingsBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorTransparent"
-            android:text="Back" />
+        android:background="@drawable/toolbar_border" >
 
         <TextView
-            android:id="@+id/textSettings"
+            android:id="@+id/textTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
             android:text="Settings"
+            android:textColor="@color/colorBlack"
             android:textSize="30dp"
-            android:textColor="@color/colorBlack" />
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@color/colorTransparent"
+            android:text="Back" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -86,6 +90,5 @@
             android:background="@drawable/btn_default_01"
             android:ems="10"
             android:text="Clear Saved Data" />
-
     </RelativeLayout>
 </RelativeLayout>

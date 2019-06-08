@@ -9,28 +9,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class AboutActivity extends AppCompatActivity {
+public class InstructionsActivity extends AppCompatActivity {
 
     Button backBtn;
-    TextView lblInformation, lblCredits;
+    TextView lblHowToPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_instructions);
 
         backBtn = findViewById(R.id.btnBack);
-        lblInformation = findViewById(R.id.lblInformation);
-        lblCredits = findViewById(R.id.lblCredits);
+        lblHowToPlay = findViewById(R.id.lblHowToPlay);
 
-        SpannableString contentInfo = new SpannableString("Information");
-        SpannableString contentCred = new SpannableString("Credits");
+        SpannableString contentHowToPlay = new SpannableString("How to Play");
 
-        contentInfo.setSpan(new UnderlineSpan(), 0, contentInfo.length(), 0);
-        lblInformation.setText(contentInfo);
-
-        contentCred.setSpan(new UnderlineSpan(), 0, contentCred.length(), 0);
-        lblCredits.setText(contentCred);
+        contentHowToPlay.setSpan(new UnderlineSpan(), 0, contentHowToPlay.length(), 0);
+        lblHowToPlay.setText(contentHowToPlay);
 
         initBackBtn();
     }
@@ -40,7 +35,7 @@ public class AboutActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AboutActivity.this, HomeActivity.class);
+                Intent intent = new Intent(InstructionsActivity.this, SpeedRunActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                 startActivity(intent);

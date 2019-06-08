@@ -4,30 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutActivity">
+    tools:context=".AboutActivity" >
 
+    // TOOLBAR
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp" >
-
-        <Button
-            android:id="@+id/btnAboutBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorTransparent"
-            android:text="Back" />
+        android:background="@drawable/toolbar_border" >
 
         <TextView
-            android:id="@+id/textAbout"
+            android:id="@+id/textTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
             android:text="About"
+            android:textColor="@color/colorBlack"
             android:textSize="30dp"
-            android:textColor="@color/colorBlack" />
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@color/colorTransparent"
+            android:text="Back" />
     </RelativeLayout>
 
     <ScrollView
@@ -39,7 +44,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" >
 
             <TextView
                 android:id="@+id/lblInformation"
@@ -48,7 +53,7 @@
                 android:layout_centerHorizontal="true"
                 android:text="Information"
                 android:textColor="@color/colorBlack"
-                android:textSize="30dp" />
+                android:textSize="26dp" />
 
             <TextView
                 android:id="@+id/textPurpose"
@@ -56,8 +61,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lblInformation"
                 android:layout_alignParentLeft="true"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
                 android:text="SpeedTyper was developed with the intention of fulfilling two purposes:"
                 android:textSize="16dp" />
 
@@ -67,9 +73,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textPurpose"
                 android:layout_alignLeft="@id/textPurpose"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
-                android:text="1. Providing practice and a learning experience in mobile application development."/>
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:text="1. Providing practice and a learning experience in mobile application development." />
 
             <TextView
                 android:id="@+id/textPurposeTwo"
@@ -77,17 +84,18 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textPurposeOne"
                 android:layout_alignLeft="@id/textPurposeOne"
+                android:layout_alignRight="@id/textPurposeOne"
                 android:layout_marginTop="10dp"
-                android:text="2. Becoming a future sample for the developer's resume/github portfolio."/>
+                android:text="2. Becoming a future sample for the developer's resume/github portfolio." />
 
             <TextView
                 android:id="@+id/textProfit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textPurposeTwo"
-                android:layout_alignParentLeft="true"
+                android:layout_alignLeft="@id/textPurpose"
+                android:layout_alignRight="@id/textPurpose"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="15dp"
                 android:text="SpeedTyper is an application entirely built for practice and will not be published. The application will not and was not built to gain, collect, or receive any form of currency."
                 android:textSize="16dp" />
 
@@ -100,7 +108,7 @@
                 android:layout_marginTop="25dp"
                 android:text="Credits"
                 android:textColor="@color/colorBlack"
-                android:textSize="30dp" />
+                android:textSize="26dp" />
 
             <TextView
                 android:id="@+id/lblDeveloper"
@@ -122,7 +130,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:text="John C Hwang" />
-
         </RelativeLayout>
     </ScrollView>
 

@@ -17,6 +17,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class SpeedRunActivity extends AppCompatActivity {
@@ -24,13 +25,11 @@ public class SpeedRunActivity extends AppCompatActivity {
     ScoreSingleton scoreSingleton;
     WordBank wordBank;
 
-    TextView txtTime;
+    RelativeLayout layoutContent;
+    TextView txtTime, txtWord, txtScore;
     EditText etInput;
-    TextView lblWord, txtWord;
-    TextView lblScore, txtScore;
-    Button backBtn;
+    Button backBtn, startBtn;
     ImageButton ibHowToPlay;
-    ImageButton ibSR;
 
     int score;
     int difficulty;
@@ -47,15 +46,14 @@ public class SpeedRunActivity extends AppCompatActivity {
         scoreSingleton = ScoreSingleton.getInstance();
         wordBank = new WordBank();
 
+        layoutContent = findViewById(R.id.layoutContent);
         txtTime = findViewById(R.id.textTime);
-        etInput = findViewById(R.id.editInput);
-        lblWord = findViewById(R.id.lblWord);
         txtWord = findViewById(R.id.textWord);
-        lblScore = findViewById(R.id.lblScore);
         txtScore = findViewById(R.id.textScore);
+        etInput = findViewById(R.id.editInput);
         backBtn = findViewById(R.id.btnBack);
+        startBtn = findViewById(R.id.btnStart);
         ibHowToPlay = findViewById(R.id.ibHowToPlay);
-        ibSR = findViewById(R.id.ibSR);
 
         inGame = false;
         isInterrupted = false;
@@ -113,7 +111,7 @@ public class SpeedRunActivity extends AppCompatActivity {
         ibHowToPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SpeedRunActivity.this, HowToPlayActivity.class);
+                Intent intent = new Intent(SpeedRunActivity.this, InstructionsActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -136,21 +134,20 @@ public class SpeedRunActivity extends AppCompatActivity {
     @SuppressLint("ClickableViewAccessibility")
     private void initStart() {
 
-        ibSR.setOnTouchListener(new View.OnTouchListener() {
+        startBtn.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(v.isPressed()) {
                     score = 0;
                     wordHandler();
-                    lblWord.setVisibility(View.VISIBLE);
-                    lblWord.setFreezesText(true);
-                    ibSR.setEnabled(false);
-                    ibSR.setVisibility(View.INVISIBLE);
+                    startBtn.setEnabled(false);
+                    startBtn.setVisibility(View.INVISIBLE);
                     backBtn.setEnabled(false);
                     backBtn.setVisibility(View.INVISIBLE);
                     ibHowToPlay.setEnabled(false);
                     ibHowToPlay.setVisibility(View.INVISIBLE);
 
+                    layoutContent.setVisibility(View.VISIBLE);
                     etInput.setEnabled(true);
                     etInput.requestFocus();
 
@@ -238,7 +235,7 @@ public class SpeedRunActivity extends AppCompatActivity {
 
                 if(inputMatched) {
                     score++;
-                    txtScore.setText("" + score);
+                    txtScore.setText("Score: " + score);
                     wordHandler();
                     inputMatched = false;
                     s.clear();

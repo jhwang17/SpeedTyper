@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_logo_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HowToPlayActivity"></activity>
+        <activity android:name=".InstructionsActivity"></activity>
         <activity android:name=".ResultActivity" />
         <activity android:name=".SpeedRunActivity" />
         <activity android:name=".AboutActivity" />

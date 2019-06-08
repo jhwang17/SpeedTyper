@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructionsActivity" >
+
+    // TOOLBAR
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_border" >
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:text="Instructions"
+            android:textColor="@color/colorBlack"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/textTitle"
+            android:background="@color/colorTransparent"
+            android:text="Back" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="25dp" >
+
+        <TextView
+            android:id="@+id/lblHowToPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="How to Play"
+            android:textColor="@color/colorBlack"
+            android:textSize="26dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/svInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutInstructions" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:text="To start the game, tap on the screen anywhere below the solid line. The timer will begin automatically."
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textInstructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textStart"
+                android:layout_alignLeft="@id/textStart"
+                android:layout_alignRight="@id/textStart"
+                android:layout_marginTop="20dp"
+                android:text="Once the game begins, type in the word displayed in the rectangle box."
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textReminderOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInstructions"
+                android:layout_alignLeft="@id/textStart"
+                android:layout_alignRight="@id/textStart"
+                android:layout_marginTop="20dp"
+                android:text="All typed in letters will automatically delete once the word is spelled correctly."
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textReminderTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textReminderOne"
+                android:layout_alignLeft="@id/textStart"
+                android:layout_alignRight="@id/textStart"
+                android:layout_marginTop="20dp"
+                android:text="Swyping is allowed!"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textObjective"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textReminderTwo"
+                android:layout_alignLeft="@id/textStart"
+                android:layout_alignRight="@id/textStart"
+                android:layout_marginTop="20dp"
+                android:text="Try to get the highest score possible!"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textChangeSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textObjective"
+                android:layout_alignLeft="@id/textStart"
+                android:layout_alignRight="@id/textStart"
+                android:layout_marginTop="20dp"
+                android:text="To change the word difficulty or to delete existing scores, go to the Settings page in the homepage/main menu."
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

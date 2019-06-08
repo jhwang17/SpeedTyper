@@ -21,7 +21,7 @@ public class RankingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
-        backBtn = findViewById(R.id.btnRankingBack);
+        backBtn = findViewById(R.id.btnBack);
 
         initBackBtn();
 

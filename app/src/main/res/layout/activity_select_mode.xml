@@ -14,7 +14,8 @@
         android:layout_marginTop="50dp"
         android:text="Select Game Mode"
         android:textColor="@color/colorBlack"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnSpeedRun"

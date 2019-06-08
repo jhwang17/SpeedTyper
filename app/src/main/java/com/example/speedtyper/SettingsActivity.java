@@ -26,7 +26,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        backBtn = findViewById(R.id.btnSettingsBack);
+        backBtn = findViewById(R.id.btnBack);
         rgDifficulty = findViewById(R.id.rgDifficulty);
         rbEasy = findViewById(R.id.rbEasy);
         rbMedium = findViewById(R.id.rbMed);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultActivity">
+    tools:context=".ResultActivity" >
 
     // RESULTS
     <RelativeLayout
@@ -74,7 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutResults"
-        android:layout_marginTop="35dp">
+        android:layout_marginTop="35dp" >
 
         <TextView
             android:id="@+id/textComment"
