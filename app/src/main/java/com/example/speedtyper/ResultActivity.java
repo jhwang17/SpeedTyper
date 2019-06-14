@@ -2,6 +2,7 @@ package com.example.speedtyper;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import java.util.Formatter;
 
 public class ResultActivity extends AppCompatActivity {
 
+    MediaPlayer mPlayer;
     private Result currentResult;
     ArrayList<Result> savedResults;
     ScoreSingleton scoreSingleton;
@@ -138,10 +140,14 @@ public class ResultActivity extends AppCompatActivity {
             isNewHighScore = newHighScoreCheck(topScoreList);
 
             if(isNewHighScore) {
+                mPlayer = MediaPlayer.create(ResultActivity.this, R.raw.heart_container_get);
+                mPlayer.start();
                 txtComment.setText("New High Score!");
                 layoutNewTop.setVisibility(View.VISIBLE);
                 validateInitials();
             } else {
+                mPlayer = MediaPlayer.create(ResultActivity.this, R.raw.round_clear);
+                mPlayer.start();
                 txtComment.setText("Not a new high score");
             }
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 
 public class SpeedRunActivity extends AppCompatActivity {
 
+    MediaPlayer mPlayer;
     ScoreSingleton scoreSingleton;
     WordBank wordBank;
 
@@ -36,12 +38,14 @@ public class SpeedRunActivity extends AppCompatActivity {
     boolean inGame, inputMatched;
     boolean isInterrupted;
 
-    private long MINUTE = (long) 60000.0;
+    private long MINUTE = (long) 30000.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speed_run);
+
+        mPlayer = MediaPlayer.create(SpeedRunActivity.this, R.raw.lost_woods);
 
         scoreSingleton = ScoreSingleton.getInstance();
         wordBank = new WordBank();
@@ -106,6 +110,13 @@ public class SpeedRunActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        mPlayer.stop();
+    }
+
     private void initHowToPlayBtn() {
 
         ibHowToPlay.setOnClickListener(new View.OnClickListener() {
@@ -158,6 +169,7 @@ public class SpeedRunActivity extends AppCompatActivity {
                     startTimer();
                     inGame = true;
                     inputMatched = false;
+                    mPlayer.start();
                 }
                 return false;
             }

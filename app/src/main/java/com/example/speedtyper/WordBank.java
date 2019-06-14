@@ -4,13 +4,14 @@ public class WordBank {
 
     private String[] easyBank = new String[] {
             "apple", "grape", "pear", "kiwi", "dog", "cat", "bird", "table", "wallet", "sky", "locker",
-            "train", "galaxy",
+            "train", "galaxy", "elephant", "expunge", "pineapple", "strawberry", "imagine", "religion", "deceit",
             "space"
     };
 
     private String[] mediumBank = new String[] {
-            "elephant", "expunge", "pineapple", "strawberry", "imagine", "religion", "deceit", "bulbasaur",
-            "ivysaur", "caterpie", "pidgey", "poliwag", "vulpix", "diglett", "rattata"
+            "bulbasaur", "ivysaur", "caterpie", "pidgey", "poliwag", "vulpix", "diglett", "rattata", "haunter",
+            "exeggutor", "kangaskhan", "aerodactyl", "dragonite", "moltres", "nidoqueen", "chinchou", "quilava",
+            "typhlosion", "feraligatr"
     };
 
     private String[] hardBank = new String[] {
