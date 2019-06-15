@@ -130,6 +130,46 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:text="John C Hwang" />
+
+
+            <TextView
+                android:id="@+id/lblMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textDeveloper"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="Music Used"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textHeartContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblMusic"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Heart Container - Zelda Ocarina of Time" />
+
+            <TextView
+                android:id="@+id/textLostWoods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textHeartContainer"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Lost Woods - Zelda Ocarina of Time" />
+
+            <TextView
+                android:id="@+id/textRoundClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textLostWoods"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Round Clear - Sonic Adventure 2 Battle" />
         </RelativeLayout>
     </ScrollView>
 
