@@ -12,7 +12,7 @@ The project is completed, in terms that the original goals have been accomplishe
 
   Two points to note:
   
-    1. The only factor to consider regarding the application is the functionalities and performance.
+    1. The application was developed concentrating only in its' performance and functionality.
     
     2. The button with the label "SpeedTyperPro" in the SELECT page was intentionally left to do nothing.
     
