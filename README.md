@@ -9,7 +9,10 @@ This app was not made to generate currency or as a source of revenue. The primar
 and also a reflection of the developer's abilities.
 
 The project is completed, in terms that the original goals have been accomplished.
+
   Two points to note:
+  
     1. The only factor to consider regarding the application is the functionalities and performance.
+    
     2. The button with the label "SpeedTyperPro" in the SELECT page was intentionally left to do nothing.
     
