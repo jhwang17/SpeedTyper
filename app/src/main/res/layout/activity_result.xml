@@ -49,23 +49,23 @@
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/lblWPS"
+            android:id="@+id/lblWPM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/lblScore"
             android:layout_alignEnd="@id/lblScore"
             android:layout_marginTop="20dp"
-            android:text="Speed: "
+            android:text="WPM: "
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/textWPS"
+            android:id="@+id/textWPM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/lblWPS"
+            android:layout_alignBottom="@id/lblWPM"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/lblWPS"
-            android:text="0 wps"
+            android:layout_toRightOf="@id/lblWPM"
+            android:text="0 words"
             android:textSize="20dp" />
     </RelativeLayout>
 

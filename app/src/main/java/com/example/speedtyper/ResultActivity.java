@@ -25,7 +25,7 @@ public class ResultActivity extends AppCompatActivity {
     ScoreSingleton scoreSingleton;
 
     Button homeBtn, tryAgainBtn, rankingBtn;
-    TextView txtScore, txtWPS;
+    TextView txtScore, txtWPM;
     TextView txtComment;
     EditText etPlayerInitial;
     RelativeLayout layoutNewTop;
@@ -45,7 +45,7 @@ public class ResultActivity extends AppCompatActivity {
         currentResult.setPlayerScore(scoreSingleton.getScore());
 
         txtScore = findViewById(R.id.textScore);
-        txtWPS = findViewById(R.id.textWPS);
+        txtWPM = findViewById(R.id.textWPM);
         txtComment = findViewById(R.id.textComment);
         etPlayerInitial = findViewById(R.id.etName);
 
@@ -127,7 +127,7 @@ public class ResultActivity extends AppCompatActivity {
 
     private void layoutHandler() {
         setScore();
-        setWPS();
+        setWPM();
 
         ArrayList<Result> topScoreList;
         ResultDataSource ds = new ResultDataSource(this);
@@ -221,15 +221,15 @@ public class ResultActivity extends AppCompatActivity {
         txtScore.setText("" + score);
     }
 
-    private void setWPS() {
+    private void setWPM() {
         StringBuilder sb = new StringBuilder();
         Formatter formatter = new Formatter(sb);
 
         float temp = (float) scoreSingleton.getScore();
-        float eq = (float) (temp / 600) * 100;
-        String wps = formatter.format("%.2f", eq).toString();
+        float eq = (float) (temp / 0.5);
+        String wpm = formatter.format("%.1f", eq).toString();
 
-        txtWPS.setText(wps + " wps");
+        txtWPM.setText(wpm + " words");
     }
 
     private void showSavedAlert(final Intent i) {

@@ -38,7 +38,7 @@ public class SpeedRunActivity extends AppCompatActivity {
     boolean inGame, inputMatched;
     boolean isInterrupted;
 
-    private long MINUTE = (long) 30000.0;
+    private long TIME = (long) 30000.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,11 +178,11 @@ public class SpeedRunActivity extends AppCompatActivity {
 
     private CountDownTimer startTimer() {
 
-        CountDownTimer timer = new CountDownTimer(MINUTE, 1000) {
+        CountDownTimer timer = new CountDownTimer(TIME, 1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
-                MINUTE = millisUntilFinished;
+                TIME = millisUntilFinished;
                 updateTimer();
             }
 
@@ -212,8 +212,8 @@ public class SpeedRunActivity extends AppCompatActivity {
     }
 
     private void updateTimer() {
-        int minutes = (int) MINUTE / 60000;
-        int seconds = (int) MINUTE % 60000 / 1000;
+        int minutes = (int) TIME / 60000;
+        int seconds = (int) TIME % 60000 / 1000;
         String time;
 
         time = "0" + minutes;
